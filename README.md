@@ -148,7 +148,12 @@ Wall time: 29 ms
 ### 2、使用ONNXRuntime部署
 #### （1）、Onnxruntime
 环境参考envs文件夹中的requirements   
-[inference-onnxruntime.ipynb](inference-onnxruntime.ipynb)   
+  
+
+首先运行Pytorch2onnx.py,将*.pth权重转换为ONNX类型。  
+`python pytorch2onnx.py --model ../checkpoints/CP_epoch100.pth --model_out model/unet.onnx --image images/input.jpg`
+
+在[inference-onnxruntime.ipynb](deploy/inference-onnxruntime.ipynb)  
 ```python
 %%time
 result = sess.run([output_name], {input_name: img})
@@ -156,7 +161,16 @@ result = sess.run([output_name], {input_name: img})
 CPU times: user 54.6 s, sys: 4.34 s, total: 59 s   
 Wall time: 9.8 s
 
-#### （2）、onnxruntime-gpu
+#### （2）、onnxruntime-gpu（TODO）
+环境有问题。
+在[inference-onnxruntime-gpu.ipynb](deploy/inference-onnxruntime-gpu.ipynb) 也未跑成功。
+
+### 3、使用TensorRT
+
+### 4、OpenVINO
+
+
+
 
 ## 参考
 * [UNet: semantic segmentation with PyTorch](https://github.com/milesial/Pytorch-UNet)
