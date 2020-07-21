@@ -129,6 +129,7 @@ This assumes you use bilinear up-sampling, and not transposed convolution in the
 
 ### 1、使用pytorch推理
 #### (1) CPU部署
+环境参考envs文件夹中的requirements  
 ```python
 %%time
 result = net(img_tensor)
@@ -136,6 +137,7 @@ result = net(img_tensor)
 CPU times: user 53.9 s, sys: 15.3 s, total: 1min 9s   
 Wall time: 8.79 s
 #### （2）GPU部署
+环境参考envs文件夹中的requirements  
 ```python
 %%time
 result = net(img_tensor)
@@ -144,7 +146,8 @@ CPU times: user 22.7 ms, sys: 7.29 ms, total: 30 ms
 Wall time: 29 ms
 
 ### 2、使用ONNXRuntime部署
-#### 1、Onnxruntime
+#### （1）、Onnxruntime
+环境参考envs文件夹中的requirements   
 [inference-onnxruntime.ipynb](inference-onnxruntime.ipynb)   
 ```python
 %%time
@@ -153,7 +156,7 @@ result = sess.run([output_name], {input_name: img})
 CPU times: user 54.6 s, sys: 4.34 s, total: 59 s   
 Wall time: 9.8 s
 
-### 2、onnxruntime-gpu
+#### （2）、onnxruntime-gpu
 
 ## 参考
 * [UNet: semantic segmentation with PyTorch](https://github.com/milesial/Pytorch-UNet)
