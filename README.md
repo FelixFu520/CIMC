@@ -14,19 +14,19 @@ Original paper by Olaf Ronneberger, Philipp Fischer, Thomas Brox: [https://arxiv
 
 
 ### 目录介绍
-* checkpoints         模型权重保存目录
-* deploy            推理模型代码目录
-* imgs             存放一些图片，用于在Readme中显示
-* predict.py         预测代码（一.5中的代码）
-* requirements.txt     环境列表
-* unet             unet模型代码
-* data             数据存放位置
-* dice_loss.py        dice距离
-* LICENSE           证书
-* runs             tensorboard日志保存目录
-* utils             代码工具目录
-* eval.py           predict引用代码
-* train.py          训练代码
+* checkpoints——        模型权重保存目录
+* deploy——            推理模型代码目录
+* imgs——             存放一些图片，用于在Readme中显示
+* predict.py——         预测代码（一.5中的代码）
+* requirements.txt——     环境列表
+* unet——             unet模型代码
+* data——             数据存放位置
+* dice_loss.py——        dice距离
+* LICENSE ——          证书
+* runs——             tensorboard日志保存目录
+* utils——             代码工具目录
+* eval.py——           predict引用代码
+* train.py——          训练代码
 
 
 ## 一、训练
@@ -128,7 +128,34 @@ This assumes you use bilinear up-sampling, and not transposed convolution in the
 ## 二、部署
 
 ### 1、使用pytorch推理
+#### (1) CPU部署
+```python
+%%time
+result = net(img_tensor)
+```
+CPU times: user 53.9 s, sys: 15.3 s, total: 1min 9s   
+Wall time: 8.79 s
+#### （2）GPU部署
+```python
+%%time
+result = net(img_tensor)
+```
+CPU times: user 22.7 ms, sys: 7.29 ms, total: 30 ms    
+Wall time: 29 ms
 
+### 2、使用ONNXRuntime部署
+#### 1、Onnxruntime
+[inference-onnxruntime.ipynb](inference-onnxruntime.ipynb)   
+```python
+%%time
+result = sess.run([output_name], {input_name: img})
+```
+CPU times: user 54.6 s, sys: 4.34 s, total: 59 s   
+Wall time: 9.8 s
+
+### 2、onnxruntime-gpu
 
 ## 参考
 * [UNet: semantic segmentation with PyTorch](https://github.com/milesial/Pytorch-UNet)
+* [onnx_runtime_examples](https://github.com/CraigANV/onnx_runtime_examples)
+
