@@ -165,11 +165,16 @@ Wall time: 9.8 s
 环境有问题。
 在[inference-onnxruntime-gpu.ipynb](deploy/inference-onnxruntime-gpu.ipynb) 也未跑成功。
 
-### 3、使用TensorRT
+### 3、AI Serving
+使用AI serving部署ONNX模型。
+详细步骤参见[inference-AIServing.ipynb](deploy/inference-AIServing.ipynb)
 
-### 4、OpenVINO
+### 4、TensorRT
 
+### 5、TVM
 
+### 6、自己创建服务器端
+参考AI Serving，自己搭建服务器端。分为Restful和gRPC两种。
 
 
 ## 参考
