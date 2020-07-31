@@ -169,11 +169,12 @@ Wall time: 9.8 s
 使用AI serving部署ONNX模型。
 详细步骤参见[inference-AIServing.ipynb](deploy/inference-AIServing.ipynb)
 
-### 4、TensorRT
+### 4、TensorRT(TODO)
+详细步骤见[inference-tensorrt.ipynb](deploy/inference-tensorrt.ipynb)
 
-### 5、TVM
+### 5、TVM(TODO)
 
-### 6、自己创建服务器端
+### 6、自己创建服务器端(TODO)
 参考AI Serving，自己搭建服务器端。分为Restful和gRPC两种。
 
 
